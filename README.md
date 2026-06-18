@@ -7,7 +7,7 @@ To mark the images, I used the software [LabelImg](https://github.com/HumanSigna
 <p align="center">
 <img width="307" height="432" alt="image" src="https://github.com/user-attachments/assets/8717f07c-f0cf-43af-9cb5-275923f9ab26" />
 </p>
-The larger boxes being the stems and the smaller boxes being the buds. As I did this, I logged the amount of buds and stems in an excel spreadsheet which I later used to analyze the data: [saguaro_bud_counts.csv](Saguaro_Bud_Counts.csv). 
+The larger boxes being the stems and the smaller boxes being the buds. As I did this, I logged the amount of buds and stems in an excel spreadsheet which I later used to analyze the data: [saguaro_bud_counts.csv](saguaro-bud-stem-per-year.csv). 
 ## Analyzing Data
 ## Machine Learning
 In progress as of 06/18/26
