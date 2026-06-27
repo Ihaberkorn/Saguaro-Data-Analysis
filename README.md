@@ -17,7 +17,7 @@ The larger boxes being the stems and the smaller boxes being the buds. As this w
 
 Many images, such as the one above, were blurry and taken far away from the saguaros. This made it so that, even if there were buds on the saguaros, it was impossible to actually see or mark them in the photo, consequently marking more stems than buds. 
 ## Analyzing Bud Data
-To analyze and graph the data, the [buds excel spreadsheet]() was put into a pandas dataframe. First, the data was graphed, looking at the average buds per year as well as the standard error for each year: 
+To analyze and graph the data, the buds excel spreadsheet was put into a pandas dataframe. First, the data was graphed, looking at the average buds per year as well as the standard error for each year: 
 
 <p align="center">
 <img width="562" height="455" alt="download" src="https://github.com/user-attachments/assets/c491a459-0935-4a28-92c1-db119a81bd79" />
@@ -32,7 +32,13 @@ To analyze the stem data, the stems excel spreadsheet was also put into a pandas
 <p align="center">
 <img width="565" height="455" alt="download" src="https://github.com/user-attachments/assets/87199c98-3dcd-43a2-863f-af84cb834a58" />
 </p>
-The means of each year seemed very similar with an exception of the year 2025 which had a huge standard deviation. It was determined that this data was not normally distributed but did have homogeneity of variances, so an anova test was done. The anova gave a p-value of 0.1669 meaning that there was not a significant difference between the means of stems in each image each year. Since there was not a signicant difference between the amount of stems in each image, an analysis on the amount of buds per stem in each image could be used as a control in looking at the amount of buds per year.
 
+The means of each year seemed very similar with an exception of the year 2025 which had a huge standard deviation. It was determined that this data was not normally distributed but did have homogeneity of variances, so an anova test was done. The anova gave a p-value of 0.1669 meaning that there was not a significant difference between the means of stems in each image each year. This can be seen in [Saguaro_stem_counts.ipynb](Saguaro_stem_counts.ipynb) Since there was not a signicant difference between the amount of stems in each image, an analysis on the amount of buds per stem in each image could be used as a control in looking at the amount of buds per year. To do this, the amount of buds in each image was divided by the amount of stems in each image. When the data was graphed it looked like there were differences in the average buds per stem per image per year.
+
+<p align ="center">
+<img width="562" height="455" alt="download" src="https://github.com/user-attachments/assets/6c3f0c88-2575-4462-97d9-e4028c39a855" />
+</p> 
+
+To determine if there was a statistical difference between the means of buds per stem per year, a kruskal wallis test was done since the data was not normally distributed nor had homogeneity of variences. The kruskal wallis test produced a p-value of 1.208e-05, meaning that there is a significant difference between at least some of the means of the buds per stem per year. To further look into this, a dunns test was done on the data. The dunns test showed a significant difference between the years 2016 and 2022, 2019 and 2022, 2020 and 2022, 2020 and 2024, implicating that these years had differing buds per stem per image per year. This can be seen in [Saguaro_stem_bud_analysis.ipynb](Saguaro_stem_bud_analysis.ipynb). 
 ## Machine Learning
 In progress as of 06/26/26
