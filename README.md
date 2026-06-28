@@ -1,5 +1,5 @@
-# Saguaro Data Analysis and Machine Learning (in progress)
-In this project, images of saguaros were used from the month of May between 2016 and 2026 to determine if there is a significant difference between the number of buds produced each year. The month of May was chosen because it is the peak flowering month for saguaros. In each image, buds and stems were labeled and counted for statistical analysis. Saguaro stems were also labeled to determine the number of buds per stem in each image. After this analysis, I used the labeling I did to train two machine learning models to detect buds and stems in images, allowing me to increase the sample size and get more accurate results. 
+# Saguaro Data Analysis
+In this project, images of saguaros were used from the month of May between 2016 and 2026 to determine if there is a significant difference between the number of buds produced each year. The month of May was chosen because it is the peak flowering month for saguaros. In each image, buds and stems were labeled and counted for statistical analysis. Saguaro stems were also labeled to determine the number of buds per stem in each image. 
 ## Data Collection
 To get the data needed for this project, information on saguaros in May was downloaded from [iNaturalist](https://www.inaturalist.org/) as a csv file: [observations-746071.csv](observations-746071.csv). This data was then put into a pandas dataframe and graphed by the counts of saguaros each year to determine how many years should be sampled from. After deciding 2026-2016 was the optimal range, 30 saguaro images were randomly sampled from each of those years and downloaded. This process can be seen in [Saguaro_images.ipynb](Saguaro_images.ipynb). 
 ## Labeling Images
@@ -49,6 +49,3 @@ The mean number of stems each year appeared similar with an exception of the yea
 <br>
 
 To determine if there was a statistical difference between the mean buds per stem per year, a Kruskal Wallis test was done since the data was not normally distributed nor had homogeneity of variences. The Kruskal Wallis test produced a p-value of 1.208e-05, meaning that there is a significant difference between at least some of the means of the buds per stem per year. To further look into this, a dunns pairwise comparison test was done on the data. The dunns test showed a significant difference between the years 2016 and 2022, 2019 and 2022, 2020 and 2022, 2020 and 2024, implicating that these years had differing buds per stem per image per year. This can be seen in [Saguaro_stem_bud_analysis.ipynb](Saguaro_stem_bud_analysis.ipynb). 
-
-## Machine Learning
-In progress as of 06/26/26
