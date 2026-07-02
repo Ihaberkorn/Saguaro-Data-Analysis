@@ -31,6 +31,17 @@ Data was analyzed with Pandas, MatPlotLib, and Scipy. First, the data was graphe
 
 The data had fairly high standard errors with fairly different means and a seemingly significant decrease of buds in 2022. The data had a non-normal distribution and non-homogeneity of variences. The best option was the Kruskal Wallis test which gave a p-value of 0.0004, showing that there is a significant difference in at least some of the years. After this, a dunns pairwise comparison test was done on the data which only showed a significant difference between the years 2022 and 2016 with a p-value of 0.001 and the years 2022 and 2020 with a p-value of 0.002. This analysis can be seen in [saguaro_bud_counts.ipynb](saguaro_bud_counts.ipynb).
 
+
+Outliers were removed from the data to see if there was a difference in the outcomes of the statistical analysis'. Using the 1.5 * IQR method, 13 outliers were removed, making the data look like:
+
+<p align="center">
+<img width="587" height="455" alt="download" src="https://github.com/user-attachments/assets/43203818-0f2a-4a59-ab29-316fdfa7ed21" /><br>
+  <em>Average buds per image per year with standard error and outliers removed</em>
+</p>
+<br>
+
+The standard errors were much lower after the outliers were removed. The data was not normally distributed nor had homogeneity of variences, making the non parametric Kruskal Wallis test the best option. It yieled a p-value of less than 0.05, meaning that there is still a significant difference between some of the means of buds each year, even with outliers removed. After doing a dunns pairwise comparison test, a significant difference between five more pairs of years was found compared to when the data still had outliers. However, this is still less differences than expected.
+
 The reason that a significant difference was not seen between most of the years is likely due to the bias created from the blurry photos mentioned before. The amount of buds each year in these photos could not be correctly counted due to these photos. This is why it is important to also label and count the number of stems each year so that the amount of buds can be controlled to the amount of stems in each image. 
 ## Analyzing Stem Data With Bud Data 
 
